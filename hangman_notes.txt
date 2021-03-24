@@ -1,0 +1,8 @@
+ - Get the list of words from the URL
+ - Start the game by making a POST API call to /hangman, and store the token in response
+ - Check the length of the hangman word, and look into the list of words of that particular length
+ - Each PUT API call to /hangman will respond with a different token, which should be used in the next call
+ - Check the frequency of letters in those filtered words and guess the most frequent character and also pass the token received when starting the game. Also add the character to a list of used characters so we don't use it to guess again.
+ - Once we get a correct response, we can filter the words even further by first filtering the words that have the letters in the exact place as the hangman word, but skip the words that have any characters from the guesses that went wrong, and also learning the frequency of the characters once again (we can skip the characters already used) to make an informed guess in the next step.
+ - In case of the response being incorrect, we can try the next most frequent character in the list
+ - We keep repeating the process, until the end of the game, by either getting the correct word or tracking the number of wrong attempts (7 max)
